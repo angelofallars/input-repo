@@ -20,3 +20,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       run:
         git clone https://angelofallars:$API_TOKEN_GITHUB@github.com/angelofallars/output-repo.git
+
+    - name: List files
+      run:
+        ls -R -a
