@@ -9,9 +9,12 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: angelofallaria/axyl-pkgbuild
+      image: archlinux:latest
 
     steps:
+    - name: Set up packages
+      run: pacman -Syu git
+
     - name: Clone repo
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
