@@ -39,4 +39,4 @@ jobs:
         git add wooshwow
         git status
         git commit --message "feat: add a file"
-        git push https://angelofallars:$API_TOKEN_GITHUB@github.com/angelofallars/output-repo.git --set-upstream origin main
+        git push --set-upstream origin main
