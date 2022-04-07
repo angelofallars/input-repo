@@ -24,3 +24,14 @@ jobs:
     - name: List files
       run:
         ls -R -a
+    
+    - name: Add file then commit
+      working-directory: ./output-repo
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      run:
+        touch wooshwow
+        git add wooshwow
+        git status
+        git commit --message "feat: add a file"
+        git push https://angelofallars:$API_TOKEN_GITHUB@github.com/angelofallars/output-repo.git --set-upstream origin main
