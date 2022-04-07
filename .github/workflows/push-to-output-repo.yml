@@ -1,0 +1,19 @@
+name: Push to output repo
+
+on:
+    push:
+
+
+jobs:
+  push-to-output-repo:
+
+    runs-on: ubuntu-latest
+    container:
+      image: angelofallaria/axyl-pkgbuild
+
+    steps:
+    - name: Clone repo
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      run:
+        git clone https://angelofallars:$API_TOKEN_GITHUB@github.com/angelofallars/output-repo
