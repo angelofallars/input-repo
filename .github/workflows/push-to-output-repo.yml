@@ -32,11 +32,9 @@ jobs:
     
     - name: Add file then commit
       working-directory: ./output-repo
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       run: |
-        touch wooshwow
-        git add wooshwow
+        touch breezy
+        git add breezy
         git status
         git commit --message "feat: add a file"
         git push --set-upstream origin main
